@@ -9,7 +9,7 @@ export class MapContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      incidents: []
+      posts: []
     };
   }
 
@@ -18,38 +18,75 @@ export class MapContainer extends Component {
       .then(items => items.map(i => filterPlaces(cities, i)))
       .then(data => {
         this.setState({
-          incidents: data
+          posts: data
         });
       });
   }
+
+  // onMarkerClick(key) {
+  //   console.log(this)
+  //   this.setState({
+  //     selectedPlace: this.state.posts[key]
+  //   })
+  // }
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: this.state.posts[props.name],
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+
+  onMapClicked = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
+
+  // onMarkerClick(props, marker, e) {
+  //   console.log(props, marker, e);
+  //   this.setState({
+  //     selectedPlace: this.state.posts[props.name]
+  //   });
+  // }
 
   render() {
     return (
       <Map
         google={this.props.google}
+        onClick={this.onMapClicked}
         initialCenter={{
           lat: 59.334591,
           lng: 18.06324
         }}
         zoom={5}
       >
-        {this.state.incidents.map((incident, key) => (
+        {this.state.posts.map((post, key) => (
           <Marker
             key={key}
-            title={"The marker`s title will appear as a tooltip."}
-            name={"SOMA"}
+            title={post.incident}
+            name={key}
+            onClick={this.onMarkerClick}
             position={{
-              lat: incident.center.latitude,
-              lng: incident.center.longitude
+              lat: post.center.latitude,
+              lng: post.center.longitude
             }}
           />
         ))}
 
-        {/* <InfoWindow onClose={this.onInfoWindowClose}>
-            <div>
-              <h1>{this.state.selectedPlace.name}</h1>
-            </div>
-        </InfoWindow> */}
+        <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}
+        >
+          <div>
+            <h1>
+              {this.state.selectedPlace ? this.state.selectedPlace.title : null}
+            </h1>
+          </div>
+        </InfoWindow>
       </Map>
     );
   }
