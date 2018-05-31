@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "cities.json": "^1.1.2",
+    "firebase": "^5.0.4",
     "geolib": "^2.0.24",
     "google-maps-react": "^2.0.2",
     "react": "^16.4.0",
