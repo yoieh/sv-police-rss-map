@@ -23,13 +23,6 @@ export class MapContainer extends Component {
       });
   }
 
-  // onMarkerClick(key) {
-  //   console.log(this)
-  //   this.setState({
-  //     selectedPlace: this.state.posts[key]
-  //   })
-  // }
-
   onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: this.state.posts[props.name],
@@ -45,13 +38,6 @@ export class MapContainer extends Component {
       });
     }
   };
-
-  // onMarkerClick(props, marker, e) {
-  //   console.log(props, marker, e);
-  //   this.setState({
-  //     selectedPlace: this.state.posts[props.name]
-  //   });
-  // }
 
   render() {
     return (
@@ -70,6 +56,9 @@ export class MapContainer extends Component {
             title={post.incident}
             name={key}
             onClick={this.onMarkerClick}
+            // icon={{
+            //   scaledSize: new this.props.google.maps.Size(32,32)
+            // }}
             position={{
               lat: post.center.latitude,
               lng: post.center.longitude
@@ -82,9 +71,14 @@ export class MapContainer extends Component {
           visible={this.state.showingInfoWindow}
         >
           <div>
-            <h1>
-              {this.state.selectedPlace ? this.state.selectedPlace.title : null}
-            </h1>
+            {this.state.selectedPlace ? (
+              <div>
+                {console.log(this.state.selectedPlace)}
+                <h2>{this.state.selectedPlace.title}</h2>
+                <p>{this.state.selectedPlace.content}</p>
+                <a href={this.state.selectedPlace.link}>Go to Post</a>
+              </div>
+            ) : null}
           </div>
         </InfoWindow>
       </Map>
