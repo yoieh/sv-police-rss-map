@@ -20,7 +20,8 @@ export const getIcon = params => {
     { id: 17, uri: require("../icons/symbol_inter.png") },
     { id: 18, uri: require("../icons/rape.png") },
     { id: 19, uri: require("../icons/firstaid.png") },
-    { id: 20, uri: require("../icons/mine.png") }
+    { id: 20, uri: require("../icons/mine.png") },
+    { id: 21, uri: require("../icons/zoom.png") }
   ];
 
   switch (params) {
@@ -88,6 +89,8 @@ export const getIcon = params => {
       return iconMap[19];
     case "Knivlagen":
       return iconMap[20];
+    case "Försvunnen person":
+      return iconMap[21];
     default:
       return iconMap[17];
   }
