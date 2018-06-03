@@ -17,78 +17,77 @@ export const getIcon = params => {
     { id: 14, uri: require("../icons/shooting.png") },
     { id: 15, uri: require("../icons/barrier.png") },
     { id: 16, uri: require("../icons/caraccident.png") },
-    { id: 17, uri: require("../icons/symbol_inter.png") }
+    { id: 17, uri: require("../icons/symbol_inter.png") },
+    { id: 18, uri: require("../icons/rape.png") },
+    { id: 19, uri: require("../icons/firstaid.png") },
+    { id: 20, uri: require("../icons/mine.png") }
   ];
-  
+
   switch (params) {
     case "Anträffad död":
       return iconMap[0];
     case "Arbetsplatsolycka":
+    case "Anträffat gods":
+    case "Farligt föremål":
+    case "Sedlighetsbrott":
+    case "Skadegörelse":
       return iconMap[1];
     case "Bedrägeri":
+    case "Rån":
+    case "Rån väpnat":
+    case "Rån övrigt":
       return iconMap[2];
     case "Brand":
       return iconMap[3];
+    case "Larm Överfall":
     case "Bråk":
+    case "Misshandel":
+    case "Olaga hot":
+    case "Våld/hot mot tjänsteman":
       return iconMap[4];
     case "Djur skadat/omhändertaget":
       return iconMap[5];
-    case "Farligt föremål":
-      return iconMap[1];
+    case "Rattfylleri":
     case "Fylleri/LOB":
       return iconMap[6];
     case "Inbrott":
+    case "Stöld":
+    case "Stöld/inbrott":
+    case "Vållande till kroppsskada":
       return iconMap[7];
+    case "Trafikkontroll":
     case "Kontroll person/fordon":
       return iconMap[8];
-    case "Larm Överfall":
-      return iconMap[3];
-    case "Misshandel":
-      return iconMap[4];
     case "Mord/dråp":
       return iconMap[9];
     case "Motorfordon":
+    case "Trafikbrott":
       return iconMap[10];
     case "Narkotikabrott":
       return iconMap[11];
     case "Olovlig körning":
       return iconMap[12];
-    case "Rattfylleri":
-      return iconMap[6];
-    case "Rån":
-      return iconMap[2];
-    case "Rån väpnat":
-      return iconMap[2];
-    case "Rån övrigt":
-      return iconMap[2];
     case "Sammanfattning kväll och natt":
-      return iconMap[13];
+    case "Sammanfattning kväll":
     case "Sammanfattning natt":
-      return iconMap[13];
     case "Sammanfattning vecka":
-      return iconMap[13];
-    case "Sedlighetsbrott":
-      return iconMap[1];
-    case "Skadegörelse":
-      return iconMap[1];
-    case "Skottlossning":
-      return iconMap[14];
-    case "Stöld":
-      return iconMap[7];
-    case "Stöld/inbrott":
-      return iconMap[7];
-    case "Trafikbrott":
-      return iconMap[10];
-    case "Trafikhinder":
-      return iconMap[15];
-    case "Trafikkontroll":
-      return iconMap[8];
-    case "Trafikolycka":
-      return iconMap[16];
+    case "Sammanfattning dag":
     case "Uppdatering":
-      return iconMap[13];
     case "Övrigt":
       return iconMap[13];
+    case "Skottlossning":
+      return iconMap[14];
+    case "Trafikhinder":
+      return iconMap[15];
+    case "Trafikolycka":
+      return iconMap[16];
+    case "Våldtäkt":
+      return iconMap[18];
+    case "Sjukdom/olycksfall":
+    case "Räddningsinsats":
+      return iconMap[19];
+    case "Knivlagen":
+      return iconMap[20];
     default:
       return iconMap[17];
   }
