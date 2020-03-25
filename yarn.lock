@@ -1541,9 +1541,9 @@ circular-json@^0.3.1:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/circular-json/-/circular-json-0.3.3.tgz#815c99ea84f6809529d2f45791bdf82711352d66"
 
-cities.json@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/cities.json/-/cities.json-1.1.2.tgz#10623f4adf24696971999da7c832cef621b599ee"
+cities.json@^1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/cities.json/-/cities.json-1.1.5.tgz#bd82fd19f67e8f7a9735b0e9c1c45d050c2bfe73"
 
 clap@^1.0.9:
   version "1.2.3"
