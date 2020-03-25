@@ -8,7 +8,7 @@
     "geolib": "^2.0.24",
     "google-maps-react": "^2.0.2",
     "react": "^16.4.0",
-    "react-dom": "^16.4.2",
+    "react-dom": "^16.13.0",
     "react-google-maps": "^9.4.5",
     "react-scripts": "1.1.4",
     "react-simple-line-icons": "^1.0.8"
